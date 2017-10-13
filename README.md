@@ -60,7 +60,7 @@ Flags are special parameters without value.
 
 Simple use case example:
 ```bash
-nextflow run iarcbioinfo/vt-nf --VCF_folder VCF/ --ref ref.fasta
+nextflow run iarcbioinfo/vt-nf --vcf_folder VCF/ --ref ref.fasta
 ```
 
 ## Output
