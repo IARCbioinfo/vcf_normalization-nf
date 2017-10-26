@@ -26,8 +26,6 @@ It consists at four piped steps:
 - [bgzip](http://www.htslib.org/download/) from `htslib`
 - [vcftools](https://vcftools.github.io/index.html) to use `vcf-sort` (`vt sort` is not robust for the moment)
 
-You can avoid installing all the external software by only installing Docker. See the [IARC-nf](https://github.com/IARCbioinfo/IARC-nf) repository for more information.
-
 ## Input
 
 | Name      | Description   |
