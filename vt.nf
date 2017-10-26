@@ -84,6 +84,6 @@ process vt {
     shell:
     vcf_tag = vcf.baseName.replace(".vcf","")
     '''
-    vt decompose -s !{vcf_tag}.vcf.gz  | vt decompose_blocksub -a - | vt normalize -r !{fasta_ref} -q - | vt uniq - | bgzip -c > !{vcf_tag}_vt.vcf.gz
+    vcf-sort !{vcf_tag}.vcf.gz | vt decompose -s - | vt decompose_blocksub -a - | vt normalize -r !{fasta_ref} -q - | vt uniq - | bgzip -c > !{vcf_tag}_vt.vcf.gz
     '''
 }
