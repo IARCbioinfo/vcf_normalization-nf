@@ -24,7 +24,7 @@ params.output_folder = "vt_VCF"
 
 log.info ""
 log.info "--------------------------------------------------------"
-log.info "  vt-nf v2.0: Nextflow pipeline for vt normalization    "
+log.info "  vt-nf : Nextflow pipeline for vt normalization    "
 log.info "--------------------------------------------------------"
 log.info "Copyright (C) IARC/WHO"
 log.info "This program comes with ABSOLUTELY NO WARRANTY; for details see LICENSE"
