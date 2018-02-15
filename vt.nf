@@ -86,5 +86,6 @@ process vt {
     '''
     zcat !{vcf_tag}.vcf.gz | awk '$1 ~ /^#/ {print $0;next} {print $0 | "LC_ALL=C sort -k1,1V -k2,2n"}' | bgzip > !{vcf_tag}_sort.vcf.gz
     zcat !{vcf_tag}_sort.vcf.gz | vt decompose -s - | vt decompose_blocksub -a - | vt normalize -r !{fasta_ref} -q - | vt uniq - | bgzip > !{vcf_tag}_vt.vcf.gz
+    tabix -p vcf !{vcf_tag}_vt.vcf.gz
     '''
 }
