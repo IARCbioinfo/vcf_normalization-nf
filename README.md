@@ -22,8 +22,10 @@ It consists at four piped steps:
 1. This pipeline is based on [nextflow](https://www.nextflow.io). As we have several nextflow pipelines, we have centralized the common information in the [IARC-nf](https://github.com/IARCbioinfo/IARC-nf) repository. Please read it carefully as it contains essential information for the installation, basic usage and configuration of nextflow and our pipelines.
 
 2. External software:
-- [vt](https://github.com/atks/vt). **Caution**: `vt` has to be in your $PATH. Try command `vt`, if it returns the options this is ok.
+- [vt](https://github.com/atks/vt). 
 - [bgzip and tabix](http://www.htslib.org) from `samtools/htslib`
+
+**Caution**: `vt`, `tabix` and `bgzip` have to be in your $PATH. Try each of the commands `vt`, `tabix` and `bgzip`, if it returns the options this is ok.
 
 ## Input
 
