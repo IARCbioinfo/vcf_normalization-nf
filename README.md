@@ -23,8 +23,7 @@ It consists at four piped steps:
 
 2. External software:
 - [vt](https://github.com/atks/vt). **Caution**: `vt` has to be in your $PATH. Try command `vt`, if it returns the options this is ok.
-- [bgzip](http://www.htslib.org/download/) from `htslib`
-- [vcftools](https://vcftools.github.io/index.html) to use `vcf-sort` (`vt sort` is not robust for the moment)
+- [bgzip and tabix](http://www.htslib.org) from `samtools/htslib`
 
 ## Input
 
