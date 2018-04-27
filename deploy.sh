@@ -1,4 +1,4 @@
-cd ~/platypus-nf/
+cd ~/vt-nf/
 git config --global user.email "delhommet@students.iarc.fr"
 git config --global user.name "Circle CI_$CIRCLE_PROJECT_REPONAME_$CIRCLE_BRANCH"
 git pull
