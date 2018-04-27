@@ -19,3 +19,4 @@ MAINTAINER Tiffany Delhomme <delhommet@students.iarc.fr>
 ################## INSTALLATION ######################
 
 RUN conda install vt
+RUN conda install -c bioconda tabix 
