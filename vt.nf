@@ -48,7 +48,7 @@ if (params.help) {
     log.info 'Optional arguments:'
     log.info '    --output_folder      FOLDER                  Output folder (default: vt_VCF).'
     log.info ''
-    exit 1
+    exit 0
 }
 
 assert (params.ref != true) && (params.ref != null) : "please specify --ref option (--ref reference.fasta(.gz))"
