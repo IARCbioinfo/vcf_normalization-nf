@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+  post:
+    - wget -qO- get.nextflow.io | bash ; chmod 755 nextflow ; sudo ln -s ~/nextflow /usr/local/bin/ ; sudo apt-get install graphviz
+    - git clone --depth=1 https://github.com/IARCbioinfo/data_test.git
+
+test:
+  override:
+    - | # run manually docker to do not search for :latest image on dockerhub
+      cd ~/vt-nf
+      docker build -t iarcbioinfo/vt-nf .
+    - | # execute the tests
+      cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --help
+deployment:
+  git:
+    branch: [master]
+    commands:
+    - chmod +x deploy.sh && ./deploy.sh
