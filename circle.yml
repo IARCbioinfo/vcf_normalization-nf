@@ -13,7 +13,7 @@ test:
     - | # execute the tests
       cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --help
     - |
-      cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF
+      cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
 deployment:
   git:
     branch: [master]
