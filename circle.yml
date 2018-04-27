@@ -12,6 +12,8 @@ test:
       docker build -t iarcbioinfo/vt-nf .
     - | # execute the tests
       cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --help
+    - |
+      cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF
 deployment:
   git:
     branch: [master]
