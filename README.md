@@ -24,14 +24,14 @@ It consists at four piped steps:
 2. External software:  
   * [vt](https://github.com/atks/vt)  
   * [bgzip and tabix](http://www.htslib.org) from `samtools/htslib`  
-  
+
  **Caution**: `vt`, `tabix` and `bgzip` have to be in your $PATH. Try each of the commands `vt`, `tabix` and `bgzip`, if it returns the options this is ok.
 
 ## Input
 
 | Name      | Description   |
 |-----------|---------------|
-| `--vcf_folder`    | Folder containing tumor VCF files |
+| `--vcf_folder`    | Folder containing tumor zipped VCF files |
 
 
 ## Parameters

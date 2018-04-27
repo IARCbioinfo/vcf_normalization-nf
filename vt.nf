@@ -43,7 +43,7 @@ if (params.help) {
     log.info 'nextflow run iarcbioinf/vt-nf --vcf_folder VCF/ --ref ref.fasta'
     log.info ''
     log.info 'Mandatory arguments:'
-    log.info '    --vcf_folder         FOLDER                  Folder containing VCF files.'
+    log.info '    --vcf_folder         FOLDER                  Folder containing VCF files (vcf.gz).'
     log.info '    --ref                FILE (with index)       Reference fasta file indexed.'
     log.info 'Optional arguments:'
     log.info '    --output_folder      FOLDER                  Output folder (default: vt_VCF).'
@@ -64,8 +64,8 @@ if (fasta_ref.exists()) {assert fasta_ref_fai.exists() : "input fasta reference 
 try { assert file(params.vcf_folder).exists() : "\n WARNING : input VCF folder not located in execution directory" } catch (AssertionError e) { println e.getMessage() }
 
 // recovering of vcf files
-vcf = Channel.fromPath( params.vcf_folder+'/*.vcf*' )
-  .ifEmpty { error "Cannot find any vcf file in: ${params.vcf_folder}" }
+vcf = Channel.fromPath( params.vcf_folder+'/*.vcf.gz' )
+  .ifEmpty { error "Cannot find any compressed vcf file in: ${params.vcf_folder}" }
 
 process vt {
 
@@ -82,7 +82,7 @@ process vt {
     file("${vcf_tag}_vt.vcf.gz") into vt_VCF
 
     shell:
-    vcf_tag = vcf.baseName.replace(".vcf","")
+    vcf_tag = vcf.baseName.replace(".vcf.gz","")
     '''
     zcat !{vcf_tag}.vcf.gz | awk '$1 ~ /^#/ {print $0;next} {print $0 | "LC_ALL=C sort -k1,1V -k2,2n"}' | bgzip > !{vcf_tag}_sort.vcf.gz
     zcat !{vcf_tag}_sort.vcf.gz | vt decompose -s - | vt decompose_blocksub -a - | vt normalize -r !{fasta_ref} -q - | vt uniq - | bgzip > !{vcf_tag}_vt.vcf.gz
