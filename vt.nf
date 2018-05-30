@@ -79,7 +79,7 @@ process vt {
     file fasta_ref_fai
 
     output:
-    file("${vcf_tag}_vt.vcf.gz") into vt_VCF
+    file("${vcf_tag}_vt.vcf.gz*") into vt_VCF
 
     shell:
     vcf_tag = vcf.baseName.replace(".gz","").replace(".vcf","")
