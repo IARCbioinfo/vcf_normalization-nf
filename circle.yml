@@ -16,6 +16,7 @@ test:
       cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
     - |
       cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta -with-dag dag.png
+      cd ~ && nextflow run ~/vt-nf/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta -with-dag dag.html
       mv dag* ~/vt-nf/
 
 deployment:
