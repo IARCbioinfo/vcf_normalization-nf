@@ -59,7 +59,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -10222,18 +10222,18 @@
      transform="rotate(90)" />
   <text
      id="text3757-3"
-     y="280.17691"
+     y="289.77695"
      x="487.11115"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      xml:space="preserve"><tspan
        id="tspan4922"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle"
-       y="280.17691"
+       y="289.77695"
        x="487.11115"
        sodipodi:role="line">vt</tspan><tspan
        id="tspan4751"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle"
-       y="311.2626"
+       y="320.86264"
        x="490.55972"
        sodipodi:role="line"> </tspan></text>
   <g
@@ -10362,7 +10362,7 @@
   </g>
   <g
      id="g43864"
-     transform="translate(94.626292,18.864826)">
+     transform="translate(94.626292,31.664826)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -10380,13 +10380,13 @@
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
          id="tspan9038">bgzip</tspan><tspan
          sodipodi:role="line"
-         x="224.84448"
-         y="358.13608"
+         x="221.39592"
+         y="339.00113"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle;fill:#979797;fill-opacity:1"
-         id="tspan8032"> </tspan><tspan
+         id="tspan8032" /><tspan
          sodipodi:role="line"
          x="224.84448"
-         y="389.22177"
+         y="358.13608"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle"
          id="tspan4751-1"> </tspan></text>
     <g
@@ -10501,7 +10501,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L'" /></flowRegion><flowPara
        id="flowPara8058"
        style="font-size:31.99999619px;line-height:1.25"> </flowPara></flowRoot>  <g
-     transform="translate(376.22629,18.864826)"
+     transform="translate(376.22629,31.664826)"
      id="g8060">
     <text
        id="text8062"
@@ -10521,12 +10521,12 @@
          sodipodi:role="line">vt</tspan><tspan
          id="tspan8070"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle;fill:#979797;fill-opacity:1"
-         y="358.13608"
-         x="128.84413"
-         sodipodi:role="line"> </tspan><tspan
+         y="339.00113"
+         x="125.39556"
+         sodipodi:role="line" /><tspan
          id="tspan8072"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle"
-         y="389.22177"
+         y="358.13608"
          x="128.84413"
          sodipodi:role="line"> </tspan></text>
     <g
@@ -10598,28 +10598,28 @@
      inkscape:connector-curvature="0" />
   <text
      id="text8062-3"
-     y="315.64078"
+     y="328.44083"
      x="687.38159"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:0%;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
      xml:space="preserve"><tspan
        id="tspan8064-6"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle;stroke-width:1"
-       y="315.64078"
+       y="328.44083"
        x="687.38159"
        sodipodi:role="line">indexing</tspan><tspan
        id="tspan8066-7"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:1"
-       y="346.8595"
+       y="359.65955"
        x="687.38159"
        sodipodi:role="line">tabix</tspan><tspan
        id="tspan8070-5"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle;fill:#979797;fill-opacity:1;stroke-width:1"
-       y="377.81219"
-       x="690.83014"
-       sodipodi:role="line"> </tspan><tspan
+       y="371.47729"
+       x="687.38159"
+       sodipodi:role="line" /><tspan
        id="tspan8072-3"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.8685627px;line-height:1.25;font-family:'Nimbus Sans L';-inkscape-font-specification:'Nimbus Sans L';text-align:center;text-anchor:middle;stroke-width:1"
-       y="408.89789"
+       y="390.61224"
        x="690.83014"
        sodipodi:role="line"> </tspan></text>
 </svg>
