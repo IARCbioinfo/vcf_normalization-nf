@@ -1,9 +1,9 @@
 ################## BASE IMAGE ######################
-FROM biocontainers/biocontainers:v1.0.0_cv4
+FROM nfcore/base
 
 ################## METADATA ######################
 
-LABEL base_image="biocontainers:v1.0.0_cv4"
+LABEL base_image="nfcore/base"
 LABEL version="1.0"
 LABEL software="vt-nf"
 LABEL software.version="1.0"
@@ -18,5 +18,5 @@ MAINTAINER Tiffany Delhomme <delhommet@students.iarc.fr>
 
 ################## INSTALLATION ######################
 
-RUN conda install -c bioconda vt
-RUN conda install -c bioconda tabix 
+COPY environment.yml /
+RUN conda env update -n root -f /environment.yml && conda clean -a
