@@ -9,11 +9,11 @@ jobs:
         - run: cd ~ && git clone --depth=1 https://github.com/IARCbioinfo/data_test.git
         - run: echo " docker.runOptions = '-u $(id -u):$(id -g)' " > ~/.nextflow/config
         - run: cd ~/project/ ; docker build -t iarcbioinfo/vt-nf .
-        - run: nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --help
-        - run: nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
-        - run: nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
-        - run: nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
-        - run: cd ; mv ~/project/nf-pipeline_info/vt_dag.html ~/project/
+        - run: cd ; nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --help
+        - run: cd ; nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
+        - run: cd ; nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
+        - run: cd ; nextflow run ~/project/vt.nf -with-docker iarcbioinfo/vt-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
+        - run: cd ; mv ~/nf-pipeline_info/vt_dag.html ~/project/
         - deploy:
             branch: [dev, master]
             command: chmod +x deploy.sh && ./deploy.sh
