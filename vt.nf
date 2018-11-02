@@ -20,7 +20,6 @@
 params.help = null
 params.vcf_folder = null
 params.ref = null
-params.output_folder = "vt_VCF"
 
 log.info ""
 log.info "--------------------------------------------------------"
@@ -46,7 +45,7 @@ if (params.help) {
     log.info '    --vcf_folder         FOLDER                  Folder containing VCF files (vcf.gz).'
     log.info '    --ref                FILE (with index)       Reference fasta file indexed.'
     log.info 'Optional arguments:'
-    log.info '    --output_folder      FOLDER                  Output folder (default: vt_VCF).'
+    log.info '    --output_folder      FOLDER                  Output folder (default: .).'
     log.info ''
     exit 0
 }
