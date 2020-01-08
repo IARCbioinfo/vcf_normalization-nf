@@ -3,4 +3,4 @@ channels:
   - bioconda
 dependencies:
   - vt=0.57721
-  - tabix=0.2.5
+  - tabix=0.2.6
