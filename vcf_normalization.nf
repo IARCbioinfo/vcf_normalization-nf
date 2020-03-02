@@ -20,14 +20,14 @@
 params.help = null
 params.vcf_folder = null
 params.ref = null
-params.normalize_opt = ""
 params.filter_opt = "-f PASS "
+params.output_folder = "normalized_VCF/"
 params.cpu = 2
 params.mem = 8
 
 log.info ""
 log.info "--------------------------------------------------------"
-log.info "  vt-nf : Nextflow pipeline for vt normalization    "
+log.info "  vcf_normalization-nf : Nextflow pipeline for vcf normalization    "
 log.info "--------------------------------------------------------"
 log.info "Copyright (C) IARC/WHO"
 log.info "This program comes with ABSOLUTELY NO WARRANTY; for details see LICENSE"
@@ -43,12 +43,14 @@ if (params.help) {
     log.info '--------------------------------------------------'
     log.info ''
     log.info 'Usage: '
-    log.info 'nextflow run iarcbioinf/vt-nf --vcf_folder VCF/ --ref ref.fasta'
+    log.info 'nextflow run iarcbioinf/vcf_normalization-nf --vcf_folder VCF/ --ref ref.fasta'
     log.info ''
     log.info 'Mandatory arguments:'
     log.info '    --vcf_folder         FOLDER                  Folder containing VCF files (vcf.gz).'
     log.info '    --ref                FILE (with index)       Reference fasta file indexed.'
-    log.info '    --normalize_opt   STRING                  Options for vt normalize.'
+    log.info '    --filter_opt         STRING                  Options for bcftoolw view (default:-f PASS, to filter on pass).'
+    log.info '    --cpu                INTEGER                 Number of cpus to use (default=2)'
+    log.info '    --mem                INTEGER                 Size of memory used for mapping (in GB) (default: 8).'
     log.info 'Optional arguments:'
     log.info '    --output_folder      FOLDER                  Output folder (default: .).'
     log.info ''
@@ -88,8 +90,6 @@ process normalization {
 
     shell:
     vcf_tag = vcf.baseName.replace(".gz","").replace(".vcf","")
-    //zcat !{vcf_tag}.vcf.gz | awk '$1 ~ /^#/ {print $0;next} {print $0 | "LC_ALL=C sort -k1,1V -k2,2n"}' | bgzip > !{vcf_tag}_sort.vcf.gz
-    //zcat !{vcf_tag}_sort.vcf.gz | vt decompose -s - | vt decompose_blocksub -a - | vt normalize !{params.vt_normalize_opt} -r !{fasta_ref} -q - | vt sort - | vt uniq - | bgzip > !{vcf_tag}_vt.vcf.gz
     '''
     bcftools view !{params.filter_opt} -Ou !{vcf} | bcftools norm -f !{fasta_ref} -m - -Ou | bcftools sort -m !{params.mem}G -T sort_tmp/ -Ou | bcftools norm -d exact -Oz -o !{vcf_tag}_norm.vcf.gz
     tabix -p vcf !{vcf_tag}_norm.vcf.gz

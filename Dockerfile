@@ -5,12 +5,12 @@ FROM nfcore/base
 
 LABEL base_image="nfcore/base"
 LABEL version="1.0"
-LABEL software="vt-nf"
+LABEL software="vcf_normalization-nf"
 LABEL software.version="1.0"
-LABEL about.summary="vt normalization with nextflow"
-LABEL about.home="http://github.com/IARCbioinfo/vt-nf"
-LABEL about.documentation="http://github.com/IARCbioinfo/vt-nf/README.md"
-LABEL about.license_file="http://github.com/IARCbioinfo/vt-nf/LICENSE.txt"
+LABEL about.summary="vcf normalization with nextflow"
+LABEL about.home="http://github.com/IARCbioinfo/vcf_normalization-nf"
+LABEL about.documentation="http://github.com/IARCbioinfo/vcf_normalization-nf/README.md"
+LABEL about.license_file="http://github.com/IARCbioinfo/vcf_normalization-nf/LICENSE.txt"
 LABEL about.license="GNU-3.0"
 
 ################## MAINTAINER ######################
@@ -20,10 +20,3 @@ MAINTAINER Nicolas Alcala <alcalan@fellows.iarc.fr>
 
 COPY environment.yml /
 RUN conda env update -n root -f /environment.yml && conda clean -a
-RUN git clone https://github.com/atks/vt.git && \
-    cd vt && \
-    make && \
-    mv vt /usr/bin/. && \
-    cd .. && \
-    rm -rf vt
-
