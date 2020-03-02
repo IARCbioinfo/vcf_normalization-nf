@@ -2,5 +2,5 @@ name: vt-nf
 channels:
   - bioconda
 dependencies:
-  - vt=0.57721
   - tabix=0.2.6
+  - bcftools=1.10.2

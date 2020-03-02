@@ -20,6 +20,10 @@
 params.help = null
 params.vcf_folder = null
 params.ref = null
+params.normalize_opt = ""
+params.filter_opt = "-f PASS "
+params.cpu = 2
+params.mem = 8
 
 log.info ""
 log.info "--------------------------------------------------------"
@@ -44,6 +48,7 @@ if (params.help) {
     log.info 'Mandatory arguments:'
     log.info '    --vcf_folder         FOLDER                  Folder containing VCF files (vcf.gz).'
     log.info '    --ref                FILE (with index)       Reference fasta file indexed.'
+    log.info '    --normalize_opt   STRING                  Options for vt normalize.'
     log.info 'Optional arguments:'
     log.info '    --output_folder      FOLDER                  Output folder (default: .).'
     log.info ''
@@ -66,8 +71,9 @@ try { assert file(params.vcf_folder).exists() : "\n WARNING : input VCF folder n
 vcf = Channel.fromPath( params.vcf_folder+'/*.vcf.gz' )
   .ifEmpty { error "Cannot find any compressed vcf file in: ${params.vcf_folder}" }
 
-process vt {
-
+process normalization {
+    cpus params.cpu
+    memory params.mem+'GB'
     tag { vcf_tag }
 
     publishDir params.output_folder, mode: 'move'
@@ -78,14 +84,14 @@ process vt {
     file fasta_ref_fai
 
     output:
-    file("${vcf_tag}_vt.vcf.gz") into vt_VCF_gz
-    file("${vcf_tag}_vt.vcf.gz.tbi") into vt_VCF_tbi
+    file("${vcf_tag}_norm.vcf.gz*") into VCF_norm
 
     shell:
     vcf_tag = vcf.baseName.replace(".gz","").replace(".vcf","")
+    //zcat !{vcf_tag}.vcf.gz | awk '$1 ~ /^#/ {print $0;next} {print $0 | "LC_ALL=C sort -k1,1V -k2,2n"}' | bgzip > !{vcf_tag}_sort.vcf.gz
+    //zcat !{vcf_tag}_sort.vcf.gz | vt decompose -s - | vt decompose_blocksub -a - | vt normalize !{params.vt_normalize_opt} -r !{fasta_ref} -q - | vt sort - | vt uniq - | bgzip > !{vcf_tag}_vt.vcf.gz
     '''
-    zcat !{vcf_tag}.vcf.gz | awk '$1 ~ /^#/ {print $0;next} {print $0 | "LC_ALL=C sort -k1,1V -k2,2n"}' | bgzip > !{vcf_tag}_sort.vcf.gz
-    zcat !{vcf_tag}_sort.vcf.gz | vt decompose -s - | vt decompose_blocksub -a - | vt normalize -r !{fasta_ref} -q - | vt uniq - | bgzip > !{vcf_tag}_vt.vcf.gz
-    tabix -p vcf !{vcf_tag}_vt.vcf.gz
+    bcftools view !{params.filter_opt} -Ou !{vcf} | bcftools norm -f !{fasta_ref} -m - -Ou | bcftools sort -m !{params.mem}G -T sort_tmp/ -Ou | bcftools norm -d exact -Oz -o !{vcf_tag}_norm.vcf.gz
+    tabix -p vcf !{vcf_tag}_norm.vcf.gz
     '''
 }
