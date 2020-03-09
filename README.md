@@ -2,7 +2,7 @@
 
 ## Nextflow pipeline for vcf normalization
 
-![Workflow representation](vt-nf.png)
+![Workflow representation](vcf_normalization-nf.png)
 
 ## Description
 
