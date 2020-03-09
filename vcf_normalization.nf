@@ -22,8 +22,10 @@ params.vcf_folder = null
 params.ref = null
 params.filter_opt = "-f PASS "
 params.output_folder = "normalized_VCF/"
+params.vcf_ext = "vcf.gz"
 params.cpu = 2
 params.mem = 8
+
 
 log.info ""
 log.info "--------------------------------------------------------"
@@ -46,11 +48,12 @@ if (params.help) {
     log.info 'nextflow run iarcbioinf/vcf_normalization-nf --vcf_folder VCF/ --ref ref.fasta'
     log.info ''
     log.info 'Mandatory arguments:'
-    log.info '    --vcf_folder         FOLDER                  Folder containing VCF files (vcf.gz).'
+    log.info '    --vcf_folder         FOLDER                  Folder containing VCF files.'
     log.info '    --ref                FILE (with index)       Reference fasta file indexed.'
     log.info '    --filter_opt         STRING                  Options for bcftoolw view (default:-f PASS, to filter on pass).'
     log.info '    --cpu                INTEGER                 Number of cpus to use (default=2)'
     log.info '    --mem                INTEGER                 Size of memory used for mapping (in GB) (default: 8).'
+    log.info '    --vcf_ext            STRING                  VCF file extension (default: vcf.gz).'
     log.info 'Optional arguments:'
     log.info '    --output_folder      FOLDER                  Output folder (default: .).'
     log.info ''
@@ -70,7 +73,7 @@ if (fasta_ref.exists()) {assert fasta_ref_fai.exists() : "input fasta reference 
 try { assert file(params.vcf_folder).exists() : "\n WARNING : input VCF folder not located in execution directory" } catch (AssertionError e) { println e.getMessage() }
 
 // recovering of vcf files
-vcf = Channel.fromPath( params.vcf_folder+'/*.vcf.gz' )
+vcf = Channel.fromPath( params.vcf_folder+'/*.'+params.vcf_ext )
   .ifEmpty { error "Cannot find any compressed vcf file in: ${params.vcf_folder}" }
 
 process normalization {
