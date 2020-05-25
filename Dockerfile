@@ -19,5 +19,5 @@ MAINTAINER **nalcala** <**alcalan@iarc.fr**>
 ################## INSTALLATION ######################
 COPY environment.yml /
 RUN apt-get update && apt-get install -y procps && apt-get clean -y
-RUN conda env create -n mutect-nf -f /environment.yml && conda clean -a
-ENV PATH /opt/conda/envs/mutect-nf/bin:$PATH
+RUN conda env create -n vcf_normalization-nf -f /environment.yml && conda clean -a
+ENV PATH /opt/conda/envs/vcf_normalization-nf/bin:$PATH
