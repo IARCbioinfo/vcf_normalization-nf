@@ -29,7 +29,7 @@ params.mem = 8
 
 log.info ""
 log.info "--------------------------------------------------------"
-log.info "  vcf_normalization-nf : Nextflow pipeline for vcf normalization    "
+log.info "  vcf_normalization-nf 1.1.0: Nextflow pipeline for vcf normalization    "
 log.info "--------------------------------------------------------"
 log.info "Copyright (C) IARC/WHO"
 log.info "This program comes with ABSOLUTELY NO WARRANTY; for details see LICENSE"

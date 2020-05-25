@@ -1,4 +1,4 @@
-name: vt-nf
+name: vcf_normalization-nf
 channels:
   - bioconda
 dependencies:
