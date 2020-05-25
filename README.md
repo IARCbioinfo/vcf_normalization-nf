@@ -44,7 +44,7 @@ It consists at four piped steps:
 | Name      | Default value | Description     |
 |-----------|---------------|-----------------|
 | `--output_folder`    |  `normalized_VCF/`  | Folder to output resulting compressed vcf |
-| `--filter_opt`      |  `-f PASS` | Options for bcftoolw view |
+| `--filter_opt`      |  `-f PASS` | Options for bcftools view |
 | `--cpu`    |  2  |    Number of cpus to use |
 | `--mem`    |  8  |  Size of memory used for mapping (in GB) |
 
@@ -64,8 +64,11 @@ Flags are special parameters without value.
 
 Simple use case example:
 ```bash
-nextflow run iarcbioinfo/vcf_normalization-nf --vcf_folder VCF/ --ref ref.fasta
+nextflow run iarcbioinfo/vcf_normalization-nf -r v1.1 -profile singularity --vcf_folder VCF/ --ref ref.fasta
 ```
+
+To run the pipeline without singularity just remove "-profile singularity". Alternatively, one can run the pipeline using a docker container (-profile docker) the conda receipe containing all required dependencies (-profile conda). 
+
 
 ## Output
   | Type      | Description     |
