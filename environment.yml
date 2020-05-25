@@ -2,5 +2,4 @@ name: vcf_normalization-nf
 channels:
   - bioconda
 dependencies:
-  - tabix=0.2.6
   - bcftools=1.10.2

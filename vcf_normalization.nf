@@ -95,6 +95,6 @@ process normalization {
     vcf_tag = vcf.baseName.replace(".gz","").replace(".vcf","")
     '''
     bcftools view !{params.filter_opt} -Ou !{vcf} | bcftools norm -f !{fasta_ref} -m - -Ou | bcftools sort -m !{params.mem}G -T sort_tmp/ -Ou | bcftools norm -d exact -Oz -o !{vcf_tag}_norm.vcf.gz
-    tabix -p vcf !{vcf_tag}_norm.vcf.gz
+    bcftools index -t !{vcf_tag}_norm.vcf.gz
     '''
 }
