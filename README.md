@@ -1,6 +1,10 @@
 # vcf_normalization-nf
 
 ## Nextflow pipeline for vcf normalization
+[![CircleCI](https://circleci.com/gh/IARCbioinfo/vcf_normalization-nf/tree/master.svg?style=svg)](https://circleci.com/gh/IARCbioinfo/vcf_normalization-nf/tree/master)
+[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/iarcbioinfo/vcf_normalization-nf/)
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/)
+
 
 ![Workflow representation](vcf_normalization-nf.png)
 
