@@ -1,5 +1,7 @@
 name: vcf_normalization-nf
 channels:
+  - conda-forge
   - bioconda
+  - defaults
 dependencies:
-  - bcftools=1.9.0
+  - bcftools=1.10.2
