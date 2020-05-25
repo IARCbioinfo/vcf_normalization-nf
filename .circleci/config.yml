@@ -12,7 +12,7 @@ jobs:
         - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --help
         - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta --mem 4 -with-dag dag.html
         - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta --mem 4 -with-dag dag.png
-        - run: cd ; mv ~/nf-pipeline_info/dag.* ~/project/
+        - run: cd ; mv ~/dag.* ~/project/
         - deploy:
             branch: [dev, master]
             command: chmod +x deploy.sh && ./deploy.sh
