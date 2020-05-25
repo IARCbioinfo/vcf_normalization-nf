@@ -21,9 +21,8 @@ It consists at four piped steps:
 
 2. External software:  
   * [bcftools](http://samtools.github.io/bcftools/bcftools.html)  
-  * [tabix](http://www.htslib.org) from `samtools/htslib`  
 
- **Caution**: `bcftools` and `tabix` have to be in your $PATH. Try each of the commands `bcftools` and `bgzip`, if it returns the options this is ok.
+ **Caution**: `bcftools` has to be in your $PATH. Try each of the commands `bcftools` and `bgzip`, if it returns the options this is ok.
 
 ## Input
 
@@ -71,11 +70,11 @@ nextflow run iarcbioinfo/vcf_normalization-nf --vcf_folder VCF/ --ref ref.fasta
 ## Output
   | Type      | Description     |
   |-----------|---------------|
-  | VCF.gz, VCF.gz.tbi       | Compressed normalized VCF files with tabix indexes|
+  | VCF.gz, VCF.gz.tbi       | Compressed normalized VCF files with indexes|
 
 ## Contributions
 
   | Name      | Email | Description     |
   |-----------|---------------|-----------------|
-  | Nicolas Alcala*    | alcalan@fellows.iarc.fr | Developer to contact for support |
+  | Nicolas Alcala*    | alcalan@iarc.fr | Developer to contact for support |
   | Tiffany Delhomme    | delhommet@students.iarc.fr | Developer |
