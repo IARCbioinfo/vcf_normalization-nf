@@ -10,9 +10,9 @@ jobs:
         - run: echo " docker.runOptions = '-u $(id -u):$(id -g)' " > ~/.nextflow/config
         - run: cd ~/project/ ; docker build -t iarcbioinfo/vcf_normalization-nf .
         - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --help
-        - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
-        - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
-        - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta
+        - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta --mem 4
+        - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta --mem 4
+        - run: cd ; nextflow run ~/project/vcf_normalization.nf -with-docker iarcbioinfo/vcf_normalization-nf --vcf_folder ~/data_test/VCF --ref ~/data_test/REF/17.fasta --mem 4
         - run: cd ; mv ~/nf-pipeline_info/vt_dag.html ~/project/
         - deploy:
             branch: [dev, master]
